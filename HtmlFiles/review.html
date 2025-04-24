@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
+  <script src="script.js"></script>
   <header>
     <h1>Smoothie Social</h1>
     <p>Your go-to spot for fresh & fun smoothies 🍓🍌🥭</p>
@@ -22,3 +22,44 @@
     <a href="register.html">Register</a>
     <a href="review.html">Review</a>
   </nav>
+  <div id="new-reviews"></div>
+  <main>
+    <div class="highlight">
+      <h2>Customer Reviews</h2>
+      <p>We love hearing from our customers! Here are some of the reviews we've received:</p>
+    </div>
+
+    <div class="menu">
+      <div class="smoothie-item">
+        <h3>Strawberry Banana Bliss</h3>
+        <p>"The perfect blend of sweet and creamy! My favorite smoothie ever!" - Sarah J.</p>
+      </div>
+      <div class="smoothie-item">
+        <h3>Mango Tango</h3>
+        <p>"A tropical delight! I can't get enough of this one!" - Mike T.</p>
+      </div>
+      <div class="smoothie-item">
+        <h3>Green Goddess</h3>
+        <p>"Healthy and delicious! A must-try for all smoothie lovers!" - Emily R.</p>
+      </div>
+    </div>
+    <div class="highlight">
+      <h2>Leave Your Review</h2>
+      <p>We'd love to hear your thoughts! Please fill out the form below:</p>
+      <form id="reviewForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="review">Review:</label>
+        <textarea id="review" name="review" required></textarea>
+        <button type="submit">Submit Review</button>
+      </form>
+    </div>
+  </main> 
+  <footer>
+    <p>&copy; 2023 Smoothie Social. All rights reserved.</p>
+    <p>Follow us on social media!</p>
+    <a href="https://www.instagram.com/smoothiesocial" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/smoothiesocial" target="_blank">Facebook</a>
+    <a href="https://www.twitter.com/smoothiesocial" target="_blank">Twitter</a>
+  </footer>
+  </body>
