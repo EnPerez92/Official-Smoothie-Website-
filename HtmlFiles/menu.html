@@ -4,85 +4,115 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Smoothie Social</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f0ffff;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fffafc, #ffe4e1);
       color: #333;
+      line-height: 1.6;
     }
-
     header {
-      background-color: #ff6f61;
+      background: linear-gradient(90deg, #ff69b4, #ff1493);
       color: white;
-      padding: 2rem 1rem;
+      padding: 2rem;
       text-align: center;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
-
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
     }
-
     nav {
-      background-color: #ffa07a;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background-color: #ffa07a;
       padding: 1rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     }
-
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 1rem;
-      font-weight: bold;
+      font-weight: 600;
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      transition: background-color 0.3s, transform 0.2s;
     }
-
     nav a:hover {
-      text-decoration: underline;
+      background-color: #ff7f50;
+      transform: scale(1.1);
     }
-
     main {
+      max-width: 1200px;
+      margin: 2rem auto;
       padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
+      background-color: white;
+      border-radius: 25px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease;
     }
-
-    .highlight {
-      background-color: #e1f3ff;
-      padding: 1.5rem;
-      border-radius: 10px;
-      margin-bottom: 2rem;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-
-    footer {
-      background-color: #ff6f61;
-      color: white;
+    .menu-section h2 {
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      margin-bottom: 2rem;
+      font-size: 2.2rem;
+      color: #ff4f81;
     }
-
-    .menu {
+    .menu-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      gap: 2rem;
     }
-
-    .smoothie-item {
-      background-color: #ffe5d9;
+    .menu-item {
+      background: #ffe5d9;
       padding: 1rem;
-      border-radius: 10px;
+      border-radius: 20px;
       text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-
-    .smoothie-item h3 {
-      margin: 0.5rem 0;
+    .menu-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
-
-    .smoothie-item p {
-      margin: 0;
-      font-size: 0.9rem;
+    .menu-item img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 15px;
+      margin-bottom: 0.8rem;
+    }
+    .menu-item span.item-name {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .menu-item span.price {
+      display: block;
+      font-size: 1rem;
+      color: #ff4f81;
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      background: linear-gradient(90deg, #ff69b4, #ff1493);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+      box-shadow: 0 -6px 20px rgba(0,0,0,0.2);
+    }
+    footer p {
+      margin: 0.3rem;
     }
   </style>
 </head>
@@ -103,38 +133,41 @@
   </nav>
 
   <main>
-    <div class="menu">
-    <h2>Menu</h2>
-    <div class="item">
-      <span class="item-name">Strawberry Banana</span>
-      <span class="price">$4.59</span>
-      <img src="https://www.purelykaylie.com/wp-content/uploads/2021/07/strawberry-banana-smoothie-2.jpg" class = "" alt="Smoothie" style="width: 40%; height: 50%; border-radius: 10px;">
-    </div>
+    <section class="menu-section">
+      <h2>Our Delicious Menu</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <img src="https://www.purelykaylie.com/wp-content/uploads/2021/07/strawberry-banana-smoothie-2.jpg" alt="Strawberry Banana Smoothie">
+          <span class="item-name">Strawberry Banana</span>
+          <span class="price">$4.59</span>
+        </div>
+        <div class="menu-item">
+          <img src="https://www.worldofvegan.com/wp-content/uploads/2020/05/mango-banana-smoothie.jpg" alt="Tropical Mango Smoothie">
+          <span class="item-name">Tropical Mango</span>
+          <span class="price">$4.99</span>
+        </div>
+        <div class="menu-item">
+          <img src="https://theavotree.co.nz/wp-content/uploads/2020/12/AvoTree2020_76-scaled.jpg" alt="Green Glow Smoothie">
+          <span class="item-name">Green Glow</span>
+          <span class="price">$5.29</span>
+        </div>
+        <div class="menu-item">
+          <img src="https://www.cookinginmygenes.com/wp-content/uploads/2016/01/Blueberry-Bliss-Smoothie-8.jpg" alt="Berry Bliss Smoothie">
+          <span class="item-name">Berry Bliss</span>
+          <span class="price">$4.79</span>
+        </div>
+        <div class="menu-item">
+          <img src="https://www.wellplated.com/wp-content/uploads/2020/12/Peanut-Butter-Banana-Smoothie-recipe.jpg" alt="Peanut Butter Power Smoothie">
+          <span class="item-name">Peanut Butter Power</span>
+          <span class="price">$5.29</span>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <div class="item">
-      <span class="item-name">Tropical Mango</span>
-      <span class="price">$4.99</span>
-      <img src="https://www.worldofvegan.com/wp-content/uploads/2020/05/mango-banana-smoothie.jpg" class = "" alt="Smoothie" style="width: 40%; height: 50%; border-radius: 10px;">
-    </div>
-
-    <div class="item">
-      <span class="item-name">Green Glow</span>
-      <span class="price">$5.29</span>
-      <img src="https://theavotree.co.nz/wp-content/uploads/2020/12/AvoTree2020_76-scaled.jpg" class = "" alt="Smoothie" style="width: 40%; height: 50%; border-radius: 10px;">
-    </div>
-
-    <div class="item">
-      <span class="item-name">Berry Bliss</span>
-      <span class="price">$4.79</span>
-      <img src="https://www.cookinginmygenes.com/wp-content/uploads/2016/01/Blueberry-Bliss-Smoothie-8.jpg" class = "" alt="Smoothie" style="width: 40%; height: 50%; border-radius: 10px;">
-    </div>
-
-    <div class="item">
-      <span class="item-name">Peanut Butter Power</span>
-      <span class="price">$5.29</span>
-      <img src="https://www.wellplated.com/wp-content/uploads/2020/12/Peanut-Butter-Banana-Smoothie-recipe.jpg" class = "" alt="Smoothie" style="width: 40%; height: 50%; border-radius: 10px;">
-    </div>
-  </div>
+  <footer>
+    <p>&copy; 2025 Smoothie Social. Stay fruity and fabulous! 🍹✨</p>
+  </footer>
 
 </body>
 </html>
