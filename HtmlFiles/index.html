@@ -9,17 +9,18 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ffe4e1, #fff0f5);
+      background: linear-gradient(135deg, #fffafc, #ffe4e1);
       color: #333;
+      
     }
     header {
       background: linear-gradient(90deg, #ff69b4, #ff1493);
       color: white;
       padding: 2rem;
       text-align: center;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      border-bottom-left-radius: 30px;
-      border-bottom-right-radius: 30px;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
     header h1 {
       font-size: 3rem;
@@ -28,75 +29,90 @@
     nav {
       display: flex;
       justify-content: center;
-      gap: 1.2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
       background-color: #ffa07a;
       padding: 1rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     }
     nav a {
       color: white;
       text-decoration: none;
       font-weight: 600;
-      transition: transform 0.2s;
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      transition: background-color 0.3s, transform 0.2s;
     }
     nav a:hover {
+      background-color: #ff7f50;
       transform: scale(1.1);
     }
     main {
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 2rem auto;
-      padding: 1rem;
-      background-color: white;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-    .highlight {
-      background: linear-gradient(135deg, #e1f3ff, #f9f9f9);
       padding: 2rem;
-      border-radius: 15px;
+      background-color: white;
+      border-radius: 25px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .menu-section h2 {
       text-align: center;
       margin-bottom: 2rem;
+      font-size: 2.2rem;
+      color: #ff4f81;
     }
-    .highlight img {
-      width: 50%;
-      border-radius: 15px;
-      margin-top: 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    .menu {
+    .menu-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      gap: 2rem;
     }
-    .smoothie-item {
+    .menu-item {
       background: #ffe5d9;
       padding: 1rem;
-      border-radius: 15px;
+      border-radius: 20px;
       text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    .smoothie-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    .menu-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
-    .smoothie-item h3 {
-      margin: 0.5rem 0;
-      font-size: 1.3rem;
+    .menu-item img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 15px;
+      margin-bottom: 0.8rem;
     }
-    .smoothie-item p {
-      margin: 0;
-      font-size: 0.95rem;
+    .menu-item span.item-name {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .menu-item span.price {
+      display: block;
+      font-size: 1rem;
+      color: #ff4f81;
+      margin-bottom: 0.5rem;
     }
     footer {
       background: linear-gradient(90deg, #ff69b4, #ff1493);
       color: white;
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem;
       margin-top: 2rem;
-      border-top-left-radius: 30px;
-      border-top-right-radius: 30px;
-      box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+      box-shadow: 0 -6px 20px rgba(0,0,0,0.2);
+    }
+    footer p {
+      margin: 0.3rem;
     }
   </style>
 </head>
