@@ -3,15 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Smoothie Social</title>
+  <title>Smoothie Social Reviews</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    form {
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      background-color: #f0fff0;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 2rem auto;
+    }
+    form input, form textarea {
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.6rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    form button {
+      padding: 0.6rem 1.4rem;
+      background-color: #ffa07a;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #ff7f50;
+    }
+    .menu, .highlight {
+      max-width: 800px;
+      width: 100%;
+      margin: 1rem auto;
+    }
+    .smoothie-item {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
-  <script src="script.js"></script>
+
   <header>
     <h1>Smoothie Social</h1>
     <p>Your go-to spot for fresh & fun smoothies 🍓🍌🥭</p>
-  
   </header>
 
   <nav>
@@ -22,7 +71,7 @@
     <a href="register.html">Register</a>
     <a href="review.html">Review</a>
   </nav>
-  <div id="new-reviews"></div>
+
   <main>
     <div class="highlight">
       <h2>Customer Reviews</h2>
@@ -43,23 +92,47 @@
         <p>"Healthy and delicious! A must-try for all smoothie lovers!" - Emily R.</p>
       </div>
     </div>
-    <div class="highlight">
+
+    <form id="reviewForm">
       <h2>Leave Your Review</h2>
-      <p>We'd love to hear your thoughts! Please fill out the form below:</p>
-      <form id="reviewForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
-        <label for="review">Review:</label>
-        <textarea id="review" name="review" required></textarea>
-        <button type="submit">Submit Review</button>
-      </form>
-    </div>
-  </main> 
-  <footer>
-    <p>&copy; 2023 Smoothie Social. All rights reserved.</p>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+      <label for="review">Review:</label>
+      <textarea id="review" name="review" required></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
+
+    <div id="new-reviews" style="max-width: 600px; width: 100%; margin: 1rem auto;"></div>
+  </main>
+
+  <footer style="text-align: center; margin-top: 2rem;">
+    <p>&copy; 2025 Smoothie Social. All rights reserved.</p>
     <p>Follow us on social media!</p>
-    <a href="https://www.instagram.com/smoothiesocial" target="_blank">Instagram</a>
-    <a href="https://www.facebook.com/smoothiesocial" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com/smoothiesocial" target="_blank">Instagram</a> |
+    <a href="https://www.facebook.com/smoothiesocial" target="_blank">Facebook</a> |
     <a href="https://www.twitter.com/smoothiesocial" target="_blank">Twitter</a>
   </footer>
-  </body>
+
+  <script>
+    document.getElementById('reviewForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const review = document.getElementById('review').value.trim();
+
+      if (name && review) {
+        const reviewContainer = document.getElementById('new-reviews');
+        const newReview = document.createElement('div');
+        newReview.className = 'smoothie-item';
+        newReview.innerHTML = `<h3>${name}</h3><p>"${review}"</p>`;
+        reviewContainer.prepend(newReview);
+
+        this.reset();
+        alert('Thank you for your review!');
+      } else {
+        alert('Please fill out both fields.');
+      }
+    });
+  </script>
+
+</body>
+</html>
