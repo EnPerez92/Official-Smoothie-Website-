@@ -4,14 +4,14 @@
       "type": "debugpy",
       "request": "launch",
       "name": "Launch Flask App",
-      "program": "${workspaceFolder}/app.py/app.py",
+      "program": "${OfficialSmoothieWebsite}/app.py/app.py",
       "args": [
         "run",
         "--no-debugger",
         "--no-reload"
       ],
       "env": {
-        "FLASK_APP": "${workspaceFolder}/app.py/app.py",
+        "FLASK_APP": "${OfficialSmoothieWebsite}/app.py/app.py",
         "FLASK_ENV": "development"
       }
     }
@@ -27,7 +27,7 @@
       "request": "launch",
       "module": "flask",
       "env": {
-        "FLASK_APP": "${workspaceFolder}/app.py/app.py"
+        "FLASK_APP": "${OfficialSmoothieWbsite}/app.py/app.py"
       },
       "args": [
         "run"
