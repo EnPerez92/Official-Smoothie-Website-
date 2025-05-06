@@ -11,7 +11,6 @@
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #fffafc, #ffe4e1);
       color: #333;
-      
     }
     header {
       background: linear-gradient(90deg, #ff69b4, #ff1493);
@@ -78,6 +77,7 @@
       text-align: center;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
     }
     .menu-item:hover {
       transform: translateY(-8px);
@@ -114,6 +114,14 @@
     footer p {
       margin: 0.3rem;
     }
+    #ingredient-list-container {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    #ingredient-list li {
+      list-style: none;
+      margin: 0.3rem 0;
+    }
   </style>
 </head>
 <body>
@@ -136,49 +144,41 @@
   <main>
     <section class="menu-section">
       <h2>Our Delicious Menu</h2>
+      <div id="ingredient-list-container">
+        <h3 id="smoothie-name">Select a smoothie below to see its ingredients</h3>
+        <ul id="ingredient-list"></ul>
+      </div>
       <div class="menu-grid">
-        <div class="menu-item">
-          <img src="https://www.purelykaylie.com/wp-content/uploads/2021/07/strawberry-banana-smoothie-2.jpg" alt="Strawberry Banana Smoothie">
-          <span class="item-name">Strawberry Banana</span>
-          <span class="price">$4.59</span>
-        </div>
-        <div class="menu-item">
-          <img src="https://www.worldofvegan.com/wp-content/uploads/2020/05/mango-banana-smoothie.jpg" alt="Tropical Mango Smoothie">
-          <span class="item-name">Tropical Mango</span>
-          <span class="price">$4.99</span>
-        </div>
-        <div class="menu-item">
-          <img src="https://theavotree.co.nz/wp-content/uploads/2020/12/AvoTree2020_76-scaled.jpg" alt="Green Glow Smoothie">
-          <span class="item-name">Green Glow</span>
-          <span class="price">$5.29</span>
-        </div>
-        <div class="menu-item">
-          <img src="https://www.cookinginmygenes.com/wp-content/uploads/2016/01/Blueberry-Bliss-Smoothie-8.jpg" alt="Berry Bliss Smoothie">
+        <div class="menu-item" onclick="showIngredients('berry-bliss')">
+          <img src="https://www.cookinginmygenes.com/wp-content/uploads/2016/01/Blueberry-Bliss-Smoothie-8.jpg" alt="Berry Bliss">
           <span class="item-name">Berry Bliss</span>
           <span class="price">$4.79</span>
         </div>
-        <div class="menu-item">
-          <img src="https://www.wellplated.com/wp-content/uploads/2020/12/Peanut-Butter-Banana-Smoothie-recipe.jpg" alt="Peanut Butter Power Smoothie">
+        <div class="menu-item" onclick="showIngredients('green-glow')">
+          <img src="https://theavotree.co.nz/wp-content/uploads/2020/12/AvoTree2020_76-scaled.jpg" alt="Green Glow">
+          <span class="item-name">Green Glow</span>
+          <span class="price">$5.29</span>
+        </div>
+        <div class="menu-item" onclick="showIngredients('peanut-butter-power')">
+          <img src="https://www.wellplated.com/wp-content/uploads/2020/12/Peanut-Butter-Banana-Smoothie-recipe.jpg" alt="Peanut Butter Power">
           <span class="item-name">Peanut Butter Power</span>
           <span class="price">$5.29</span>
         </div>
-        <div class="menu-item">
-         <img src="https://www.homecookingadventure.com/wp-content/uploads/2022/01/pineapple-coconut-banana-smoothie.jpg" alt="Coconut Coast Smoothie">
-         <span class="item-name">Coconut Coast</span>
-         <span class="price">$5.49</span>
+        <div class="menu-item" onclick="showIngredients('coconut-coast')">
+          <img src="https://www.homecookingadventure.com/wp-content/uploads/2022/01/pineapple-coconut-banana-smoothie.jpg" alt="Coconut Coast">
+          <span class="item-name">Coconut Coast</span>
+          <span class="price">$5.49</span>
         </div>
-        <div class="menu-item">
-         <img src="https://healthyfitnessmeals.com/wp-content/uploads/2018/06/tropical-protein-smoothie-7.jpg" alt="Tropical Tango Smoothie">
-         <span class="item-name">Tropical Tango</span>
-         <span class="price">$4.99</span>
+        <div class="menu-item" onclick="showIngredients('tropical-tango')">
+          <img src="https://healthyfitnessmeals.com/wp-content/uploads/2018/06/tropical-protein-smoothie-7.jpg" alt="Tropical Tango">
+          <span class="item-name">Tropical Tango</span>
+          <span class="price">$4.99</span>
         </div>
-        <div class="menu-item">
-         <img src="https://www.sugarsalted.com/wp-content/uploads/2024/04/vitamin-c-citrus-power-smoothie-008-1200x618.jpg" alt="Sweet Citrus Smoothie">
-         <span class="item-name">Sweet Citrus</span>
-         <span class="price">$5.29</span>
+        <div class="menu-item" onclick="showIngredients('sweet-citrus')">
+          <img src="https://www.sugarsalted.com/wp-content/uploads/2024/04/vitamin-c-citrus-power-smoothie-008-1200x618.jpg" alt="Sweet Citrus">
+          <span class="item-name">Sweet Citrus</span>
+          <span class="price">$5.29</span>
         </div>
-        <div class="menu-item">
-          
       </div>
     </section>
   </main>
@@ -188,5 +188,36 @@
     <p>Follow us on <a href="https://www.instagram.com" style="color: #fff; text-decoration: underline;">Instagram</a>, <a href="https://www.facebook.com" style="color: #fff; text-decoration: underline;">Facebook</a>, and <a href="https://www.tiktok.com" style="color: #fff; text-decoration: underline;">TikTok</a>.</p>
   </footer>
 
+  <script>
+    const smoothies = {
+      "berry-bliss": { name: "Berry Bliss", ingredients: ["Strawberries", "Blueberries", "Banana", "Almond Milk"] },
+      "green-glow": { name: "Green Glow", ingredients: ["Spinach", "Kale", "Pineapple", "Coconut Water"] },
+      "peanut-butter-power": { name: "Peanut Butter Power", ingredients: ["Peanut Butter", "Banana", "Oats", "Almond Milk"] },
+      "coconut-coast": { name: "Coconut Coast", ingredients: ["Coconut Milk", "Coconut Yogurt", "Banana", "Honey"] },
+      "tropical-tango": { name: "Tropical Tango", ingredients: ["Pineapple", "Strawberry", "Mango", "Peach", "Orange Juice"] },
+      "sweet-citrus": { name: "Sweet Citrus", ingredients: ["Lemon", "Orange", "Tangerine", "Grapefruit", "Pineapple Juice"] },
+      "peachy-keen": { name: "Peachy Keen", ingredients: ["Peach", "Pineapple", "Mango", "Coconut Water"] },
+      "kiwi-kick": { name: "Kiwi Kick", ingredients: ["Kiwi", "Kale", "Strawberry", "Apple Juice"] },
+      "papaya-punch": { name: "Papaya Punch", ingredients: ["Papaya", "Peach", "Mango", "Orange Juice"] },
+      "raspberry-rush": { name: "Raspberry Rush", ingredients: ["Raspberry", "Blueberry", "Strawberry", "Blackberry", "Coconut Milk"] },
+      "blueberry-breeze": { name: "Blueberry Breeze", ingredients: ["Blueberry", "Pomegranate", "Blackberry", "Kale", "Apple Juice"] }
+    };
+
+    function showIngredients(key) {
+      const smoothie = smoothies[key];
+      if (smoothie) {
+        document.getElementById("smoothie-name").textContent = smoothie.name;
+        const list = document.getElementById("ingredient-list");
+        list.innerHTML = '';
+        smoothie.ingredients.forEach(ingredient => {
+          const li = document.createElement("li");
+          li.textContent = ingredient;
+          list.appendChild(li);
+        });
+      }
+    }
+  </script>
+
 </body>
 </html>
+
