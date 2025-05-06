@@ -3,121 +3,187 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Smoothie Social</title>
+  <title>Contact Us - Smoothie Social</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f0ffff;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fffafc, #ffe4e1);
       color: #333;
     }
-
     header {
-      background-color: #ff6f61;
+      background: linear-gradient(90deg, #ff69b4, #ff1493);
       color: white;
-      padding: 2rem 1rem;
+      padding: 2rem;
       text-align: center;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
-
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
     }
-
     nav {
-      background-color: #ffa07a;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background-color: #ffa07a;
       padding: 1rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     }
-
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 1rem;
-      font-weight: bold;
+      font-weight: 600;
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      transition: background-color 0.3s, transform 0.2s;
     }
-
     nav a:hover {
-      text-decoration: underline;
+      background-color: #ff7f50;
+      transform: scale(1.1);
     }
-
     main {
-      padding: 2rem;
       max-width: 1000px;
-      margin: auto;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 25px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease;
     }
-
-    .highlight {
-      background-color: #e1f3ff;
-      padding: 1.5rem;
-      border-radius: 10px;
-      margin-bottom: 2rem;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-
-    footer {
-      background-color: #ff6f61;
-      color: white;
+    h2 {
       text-align: center;
-      padding: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      color: #ff4f81;
+    }
+    form {
+      width: 100%;
+      max-width: 500px;
+      background-color: #f0fff0;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 0 auto;
+    }
+    form input, form textarea {
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+    form button {
+      padding: 0.8rem 1.6rem;
+      background-color: #ffa07a;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+    form button:hover {
+      background-color: #ff7f50;
+      transform: scale(1.05);
+    }
+    .contact-details {
+      text-align: center;
       margin-top: 2rem;
     }
-
-    .menu {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+    .contact-details h3 {
+      margin-bottom: 0.5rem;
     }
-
-    .smoothie-item {
-      background-color: #ffe5d9;
-      padding: 1rem;
-      border-radius: 10px;
+    .contact-details p, .contact-details a {
+      margin: 0.3rem 0;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-details a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background: linear-gradient(90deg, #ff69b4, #ff1493);
+      color: white;
       text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+      box-shadow: 0 -6px 20px rgba(0,0,0,0.2);
     }
-
-    .smoothie-item h3 {
-      margin: 0.5rem 0;
-    }
-
-    .smoothie-item p {
-      margin: 0;
-      font-size: 0.9rem;
+    footer p {
+      margin: 0.3rem;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Smoothie Social</h1>
-    <p>Your go-to spot for fresh & fun smoothies 🍓🍌🥭</p>
+    <h1>Contact Smoothie Social</h1>
+    <p>We’d love to hear from you! 🍓🍍🥭</p>
   </header>
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="ingredients.html">Menu</a>
+    <a href="menu.html">Menu</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a href="register.html">Register</a>
     <a href="review.html">Review</a>
+    <a href="cart.html">Cart</a>
   </nav>
 
   <main>
-    <section class="highlight">
-      <h2>About us</h2>
-      <p>Hey smoothie fam! We are a fruit-obsessed, blender-happy humans who believes life’s better with a straw in hand and a smoothie in the other. 🍓🥭✨
-        Smoothie Social was born out of our love for mixing up colorful, feel-good blends that taste as amazing as they look. Whether you’re team green machine or a berry babe, we’re here to serve up vibes, sips, and a whole lotta smoothie inspo.
-        This isn’t just about smoothies -it’s a lifestyle. So if you're into good energy, chill vibes, and drinks that make your taste buds dance, you’re in the right spot. Let’s blend and be besties. 💕🍌
-   </p>
-   <img src="https://images.pexels.com/photos/1438077/pexels-photo-1438077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Smoothie Social" style="width: 100%; max-width: 400px; border-radius: 10px;">
-    <img src="https://images.pexels.com/photos/7937483/pexels-photo-7937483.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Smoothie Social" style="width: 100%; max-width: 370px; border-radius: 10px;">
-  </section>
+    <h2>Get in Touch</h2>
+    <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">Have a question, feedback, or just want to say hi? Drop us a message below or reach out on social media!</p>
 
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-details">
+      <h3>Contact Details</h3>
+      <p>📍 123 Smoothie Lane, Fruitville, NY</p>
+      <p>📞 (123) 456-7890</p>
+      <p>✉ hello@smoothiesocial.com</p>
+
+      <h3>Follow Us</h3>
+      <p>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a> |
+        <a href="https://www.facebook.com" target="_blank">Facebook</a> |
+        <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+      </p>
+    </div>
   </main>
 
   <footer>
-    &copy; 2025 Smoothie Social. Stay fruity!
-  </footer>  
+    <p>&copy; 2025 Smoothie Social. Stay fruity and fabulous! 🍹✨</p>
+    <p>Follow us on <a href="https://www.instagram.com" style="color: #fff; text-decoration: underline;">Instagram</a>, <a href="https://www.facebook.com" style="color: #fff; text-decoration: underline;">Facebook</a>, and <a href="https://www.tiktok.com" style="color: #fff; text-decoration: underline;">TikTok</a>.</p>
+  </footer>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for your message! We will get back to you soon.');
+      this.reset();
+    });
+  </script>
 
 </body>
 </html>
